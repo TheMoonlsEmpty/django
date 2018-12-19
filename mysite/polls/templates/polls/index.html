@@ -1,0 +1,17 @@
+{% load static %}
+<img src = "{% static '1.jpeg' %}">   #链接方法1
+
+<!--<img src="/static/1.jpeg">-->     #链接方法2
+<!--<img src="http://img5.duitang.com/uploads/item/201410/26/20141026015139_H5wCJ.thumb.700_0.jpeg">-->
+                                      #链接方法3
+{% if latest_question_list %}
+    <ul>
+    {% for question in latest_question_list %}
+        <li><a href="/polls/{{ question.id }}/">{{ question.question_text }}</a></li>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>No polls are available.</p>
+{% endif %}
+
+
